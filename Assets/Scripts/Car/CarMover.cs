@@ -9,12 +9,12 @@ public class CarMover : MonoBehaviour
 
     private Rigidbody _rigidbody;
 
-    void Awake()
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         _rigidbody.AddForce(Vector3.right * _speed * Time.deltaTime);
     }

@@ -5,14 +5,14 @@ using UnityEngine.Events;
 
 public class CoinTrigger : MonoBehaviour
 {
-    [SerializeField] private Companion _companion;
+    [SerializeField] private CompanionMoney _companionMoney;
     [SerializeField] private int _reward;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<Companion>(out Companion companion))
         {
-            _companion.AddMoney(_reward);
+            _companionMoney.AddMoney(_reward);
             Destroy(gameObject);
         }
     }

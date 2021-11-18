@@ -1,16 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Companion : MonoBehaviour
 {
-    [SerializeField] ParticleSystem _deathEffect;
-    [SerializeField] float _xOffset;
-
-    public int Money { get; private set; }
-
-    public event UnityAction<int> MoneyChanged;
+    [SerializeField] private ParticleSystem _deathEffect;
+    [SerializeField] private float _xOffset;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,11 +14,5 @@ public class Companion : MonoBehaviour
             Instantiate(_deathEffect, transform.position, Quaternion.Euler(_xOffset, transform.position.y, transform.position.z));
             Destroy(gameObject);
         }
-    }
-
-    public void AddMoney(int money)
-    {
-        Money += money;
-        MoneyChanged?.Invoke(Money);
     }
 }

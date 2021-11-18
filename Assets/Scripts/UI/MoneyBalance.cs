@@ -6,16 +6,16 @@ using TMPro;
 public class MoneyBalance : MonoBehaviour
 {
     [SerializeField] private TMP_Text _money; 
-    [SerializeField] private Companion _companion;
+    [SerializeField] private CompanionMoney _companionMoney;
 
     private void OnEnable()
     {
-        _companion.MoneyChanged += OnMoneyChanged;
+        _companionMoney.MoneyChanged += OnMoneyChanged;
     }
 
     private void OnDisable()
     {
-        _companion.MoneyChanged -= OnMoneyChanged;
+        _companionMoney.MoneyChanged -= OnMoneyChanged;
     }
 
     private void OnMoneyChanged(int money)
