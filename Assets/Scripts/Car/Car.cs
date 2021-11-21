@@ -6,9 +6,6 @@ public class Car : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<CarDeactivator>(out CarDeactivator deactivator))
-        {
-            gameObject.SetActive(false);
-        }
+        gameObject.SetActive(false); 
     }
 }
