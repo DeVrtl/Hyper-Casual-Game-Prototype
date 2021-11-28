@@ -10,7 +10,7 @@ public class ObjectPool : MonoBehaviour
 
     private List<GameObject> _pool = new List<GameObject>();
 
-    public void Init(GameObject prefab)
+    protected void Init(GameObject prefab)
     {
         for (int i = 0; i < _capacity; i++)
         {
@@ -21,7 +21,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
-    public bool TryGetObject(out GameObject resualt)
+    protected bool TryGetObject(out GameObject resualt)
     {
         resualt = _pool.FirstOrDefault(p => p.activeSelf == false);
 
